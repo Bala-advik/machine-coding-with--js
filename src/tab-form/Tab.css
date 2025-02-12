@@ -1,0 +1,17 @@
+.tab-container {
+    display: flex; 
+    flex-direction: row;   
+}
+
+.tab-heading {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.profile-container {
+    border: 1px solid black;
+    width: 100px;
+    height: 200px;
+}
