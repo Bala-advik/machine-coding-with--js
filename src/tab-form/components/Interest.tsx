@@ -1,7 +1,7 @@
 const Interest = ({
   individualTabData,
   setIndividualTabData,
-  errors
+  errors,
 }: {
   individualTabData: any;
   errors: any;
@@ -18,28 +18,36 @@ const Interest = ({
   };
   return (
     <div className="interest-container">
-      <input
-        type="checkbox"
-        checked={interests.includes("coding")}
-        name={"coding"}
-        onChange={handleSetData}
-      />
-      Coding
-      <input
-        type="checkbox"
-        checked={interests.includes("trekking")}
-        name={"trekking"}
-        onChange={handleSetData}
-      />
-      Trekking
-      <input
-        type="checkbox"
-        checked={interests.includes("swimming")}
-        name={"swimming"}
-        onChange={handleSetData}
-      />
-      Swimming
-      <span><p className="error-text">{errors.interests}</p></span>
+      <label>
+        <input
+          type="checkbox"
+          checked={interests.includes("coding")}
+          name={"coding"}
+          onChange={handleSetData}
+        />
+        Coding
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={interests.includes("trekking")}
+          name={"trekking"}
+          onChange={handleSetData}
+        />
+        Trekking
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={interests.includes("swimming")}
+          name={"swimming"}
+          onChange={handleSetData}
+        />
+        Swimming
+      </label>
+      <span>
+        <p className="error-text">{errors.interests}</p>
+      </span>
     </div>
   );
 };

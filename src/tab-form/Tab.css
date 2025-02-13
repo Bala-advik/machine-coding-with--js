@@ -1,26 +1,51 @@
 .tab-container {
-    display: flex; 
+  display: flex;
 }
 
 .tab-heading {
-    padding: 5px;
-    margin-right: 5px;
-    border: 1px solid black;
-    cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .tab-component {
-    border: 1px solid black;
-    height: 200px;
+  border: 1px solid black;
+  height: 200px;
 }
 
 .profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container > span {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.interest-container {  
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+.settings-container {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .error-text {
-    color: red;
-    font-size: 10px;
-    margin: 0;
+  color: red;
+  font-size: 10px;
+  margin: 0;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
 }

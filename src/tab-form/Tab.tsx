@@ -8,9 +8,9 @@ const Tab = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [individualTabData, setIndividualTabData] = useState({
     name: "",
-    age: "",
+    age: 0,
     email: "",
-    interests: ["coding", "swimming", "trekking"],
+    interests: [],
     theme: "dark",
   });
   const [errors, setErrors] = useState({});
@@ -25,7 +25,7 @@ const Tab = () => {
         if (individualTabData.name === "") {
           err.name = "Enter a valid name";
         }
-        if (individualTabData.age === "") {
+        if (individualTabData.age === 0 || individualTabData.age < 18) {
           err.age = "Enter a valid Age";
         }
         if (individualTabData.email === "") {
@@ -59,7 +59,13 @@ const Tab = () => {
   ];
 
   const handleTabChange = (tabIndex: any) => {
-    setActiveTab(tabIndex);
+    if (
+      tabData[activeTab - 1] &&
+      tabData[activeTab - 1].validate &&
+      tabData[activeTab - 1]?.validate()
+    ) {
+      setActiveTab(tabIndex);
+    }
   };
 
   const handleNext = () => {
@@ -72,7 +78,13 @@ const Tab = () => {
     }
   };
   const handlePrevious = () => {
-    setActiveTab((prevState) => prevState - 1);
+    if (
+      tabData[activeTab - 1] &&
+      tabData[activeTab - 1].validate &&
+      tabData[activeTab - 1]?.validate()
+    ) {
+      setActiveTab((prevState) => prevState - 1);
+    }
   };
 
   const ActiveTabComponent: any = tabData[activeTab - 1].component;
@@ -100,16 +112,18 @@ const Tab = () => {
         />
       </div>
 
-      <div>
+      <div className="buttons">
         {activeTab > 1 && <button onClick={handlePrevious}>Prev</button>}
       </div>
-      <div>
+      <div className="buttons">
         {activeTab < tabData.length && (
           <button onClick={handleNext}>Next</button>
         )}
       </div>
 
-      <div>{activeTab === tabData.length && <button>Submit</button>}</div>
+      <div className="buttons">
+        {activeTab === tabData.length && <button>Submit</button>}
+      </div>
     </div>
   );
 };
