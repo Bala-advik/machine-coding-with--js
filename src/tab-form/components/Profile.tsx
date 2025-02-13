@@ -1,8 +1,10 @@
 const Profile = ({
   individualTabData,
   setIndividualTabData,
+  errors,
 }: {
   individualTabData: any;
+  errors: any;
   setIndividualTabData: any;
 }) => {
   const { name, age, email } = individualTabData;
@@ -13,7 +15,7 @@ const Profile = ({
       [e.target.name]: e.target.value,
     }));
   };
-  
+
   return (
     <div className="profile-container">
       <span>
@@ -27,6 +29,9 @@ const Profile = ({
         />
       </span>
       <span>
+        <p className="error-text">{errors.name}</p>
+      </span>
+      <span>
         <label>Age:</label>
         <input
           name="age"
@@ -37,6 +42,9 @@ const Profile = ({
         />
       </span>
       <span>
+        <p className="error-text">{errors.age}</p>
+      </span>
+      <span>
         <label>Email:</label>
         <input
           name="email"
@@ -45,6 +53,9 @@ const Profile = ({
           value={email}
           onChange={handleSetData}
         />
+      </span>
+      <span>
+        <p className="error-text">{errors.email}</p>
       </span>
     </div>
   );
