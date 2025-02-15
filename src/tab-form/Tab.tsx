@@ -4,9 +4,24 @@ import Interest from "./components/Interest";
 import Settings from "./components/Setttings";
 import { useState } from "react";
 
+export interface TabDataType {
+  name: string;
+  age: number;
+  email: string;
+  interests: string[];
+  theme: string;
+}
+
+export interface ErrorType {
+  name?: string;
+  age?: string;
+  email?: string;
+  interests?: string;
+}
+
 const Tab = () => {
   const [activeTab, setActiveTab] = useState(1);
-  const [individualTabData, setIndividualTabData] = useState({
+  const [individualTabData, setIndividualTabData] = useState<TabDataType>({
     name: "",
     age: 0,
     email: "",

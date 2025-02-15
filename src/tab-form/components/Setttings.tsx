@@ -1,8 +1,10 @@
+import { TabDataType } from "../Tab";
+
 const Settings = ({
   individualTabData,
   setIndividualTabData,
 }: {
-  individualTabData: any;
+  individualTabData: TabDataType;
   setIndividualTabData: any;
 }) => {
   const { theme } = individualTabData;

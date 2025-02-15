@@ -1,10 +1,12 @@
+import { ErrorType, TabDataType } from "../Tab";
+
 const Profile = ({
   individualTabData,
   setIndividualTabData,
   errors,
 }: {
-  individualTabData: any;
-  errors: any;
+  individualTabData: TabDataType;
+  errors: ErrorType;
   setIndividualTabData: any;
 }) => {
   const { name, age, email } = individualTabData;
