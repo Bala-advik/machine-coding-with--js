@@ -1,4 +1,6 @@
 import { ErrorType, TabDataType } from "../Tab";
+import useFetch from "../../custom-hooks/useFetch";
+import { useEffect } from "react";
 
 const Profile = ({
   individualTabData,
@@ -10,6 +12,13 @@ const Profile = ({
   setIndividualTabData: any;
 }) => {
   const { name, age, email } = individualTabData;
+  const {data, isLoading} = useFetch("https://jsonplaceholder.typicode.com/todos/");
+
+  useEffect(()=>{
+    if(!isLoading) {
+      console.log(data);      
+    }
+  }, [data, isLoading])
 
   const handleSetData = (e: any) => {
     setIndividualTabData((prevState: any) => ({

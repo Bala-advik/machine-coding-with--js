@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 
-type fetchProps = {
-  url: string;
-};
-
-const useFetch = ({ url }: fetchProps) => {
+const useFetch = (url: string) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchData = async () => {
+  const fetchData = async (signal: any) => {
     try {
       setIsLoading(true);
-      const response = await fetch(url);
-      const parsedResponse = await response.json();
-      setData(parsedResponse);
+      await fetch(url, { signal })
+        .then((res) => res.json())
+        .then((res) => setData(res));
     } catch (err: any) {
       setError(err);
     } finally {
@@ -23,8 +19,11 @@ const useFetch = ({ url }: fetchProps) => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+    fetchData(signal);
+    return () => abortController.abort();
+  }, [url]);
 
   return { data, error, isLoading };
 };
