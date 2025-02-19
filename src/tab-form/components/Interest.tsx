@@ -10,6 +10,11 @@ const Interest = ({
   setIndividualTabData: any;
 }) => {
   const { interests } = individualTabData;
+
+  // TODO: Develop IntersectionObserver from this
+  // const ref = React.useRef();
+  // const isOnScreen = useIntersectionObserver(ref, { threshold: 0.5 });
+
   const handleSetData = (e: any) => {
     setIndividualTabData((prevState: any) => ({
       ...prevState,
