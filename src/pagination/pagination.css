@@ -1,0 +1,47 @@
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-title {
+  text-align: center;
+}
+
+.pagination-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid black;
+  align-items: center;
+  padding: 10px;
+  margin: 1rem;
+}
+
+.pagination-buttons {
+  margin-top: 10px;
+}
+
+.pagination-buttons > span {
+  cursor: pointer;
+}
+
+.pagination-buttons .active {
+  background-color: aqua;
+}
+
+.pagination-button {
+  cursor: pointer;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid black;
+}
