@@ -12,13 +12,15 @@ const Profile = ({
   setIndividualTabData: any;
 }) => {
   const { name, age, email } = individualTabData;
-  const {data, isLoading} = useFetch("https://jsonplaceholder.typicode.com/todos/");
+  const { data, isLoading } = useFetch(
+    "https://jsonplaceholder.typicode.com/todos/"
+  );
 
-  useEffect(()=>{
-    if(!isLoading) {
-      console.log(data);      
+  useEffect(() => {
+    if (!isLoading) {
+      // console.log(data);
     }
-  }, [data, isLoading])
+  }, [data, isLoading]);
 
   const handleSetData = (e: any) => {
     setIndividualTabData((prevState: any) => ({

@@ -7,6 +7,7 @@ function App() {
       Hello, Which one do you want to navigate to ?
       <Link to="/tab-form">Tab Form</Link>
       <Link to="/pagination">Pagination</Link>
+      <Link to="/dnd">Drag and Drop</Link>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.tsx";
 import Tab from "./tab-form/Tab.tsx";
 import Pagination from "./pagination/Pagination.tsx";
+import DragAndDrop from "./drag-and-drop/dnd.tsx";
 
 const PAGE_SIZE: number = 10;
 
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/" element={<App />} />
       <Route path="/tab-form" element={<Tab />} />
       <Route path="/pagination" element={<Pagination pageSize={PAGE_SIZE} />} />
+      <Route path="/dnd" element={<DragAndDrop />} />
     </Routes>
   </BrowserRouter>
 );

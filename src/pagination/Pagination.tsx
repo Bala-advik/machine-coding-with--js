@@ -66,7 +66,9 @@ const Pagination = ({ pageSize }: { pageSize: number }) => {
             ))}
       </div>
       <div className="pagination-buttons">
-        <span onClick={goToPrev}>⬅️</span>
+        <button disabled={currentPage === 0} onClick={goToPrev}>
+          ⬅️
+        </button>
         {[...Array(noOfPages).keys()].map((p) => (
           <span
             className={`pagination-button ${currentPage === p && "active"}`}
@@ -75,7 +77,9 @@ const Pagination = ({ pageSize }: { pageSize: number }) => {
             {p}
           </span>
         ))}
-        <span onClick={goToNext}>➡️</span>
+        <button disabled={currentPage === noOfPages - 1} onClick={goToNext}>
+          ➡️
+        </button>
       </div>
     </div>
   );
