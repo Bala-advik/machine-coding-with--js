@@ -59,7 +59,8 @@ const DragAndDrop = () => {
         tasks={tasks}
         handleDragStart={handleDragStart}
         handleDragEnd={handleDragEnd}
-        column="todo"
+        columnValue="todo"
+        columnTitle="To-Do"
       />
       <DNDList
         handleDragOver={handleDragOver}
@@ -67,7 +68,8 @@ const DragAndDrop = () => {
         tasks={tasks}
         handleDragStart={handleDragStart}
         handleDragEnd={handleDragEnd}
-        column="in-progress"
+        columnValue="in-progress"
+        columnTitle="In Progress"
       />
       <DNDList
         handleDragOver={handleDragOver}
@@ -75,7 +77,8 @@ const DragAndDrop = () => {
         tasks={tasks}
         handleDragStart={handleDragStart}
         handleDragEnd={handleDragEnd}
-        column="done"
+        columnValue="done"
+        columnTitle="Done"
       />
     </div>
   );

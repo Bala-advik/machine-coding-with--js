@@ -1,29 +1,36 @@
 import { tasksProp } from "./dnd";
 
+type DNDListProps = {
+  handleDragOver: React.DragEventHandler;
+  handleOnDrop: (
+    e: React.DragEvent<HTMLDivElement>,
+    columnValue: string
+  ) => void;
+  handleDragStart: (e: React.DragEvent<HTMLDivElement>, taskId: number) => void;
+  tasks: tasksProp[];
+  handleDragEnd: React.DragEventHandler;
+  columnValue: string;
+  columnTitle: string;
+};
+
 const DNDList = ({
   handleDragOver,
   handleOnDrop,
   handleDragStart,
   tasks,
   handleDragEnd,
-  column,
-}: {
-  handleDragOver: any;
-  handleOnDrop: any;
-  handleDragStart: any;
-  tasks: tasksProp[];
-  handleDragEnd: any;
-  column: string;
-}) => {
+  columnValue,
+  columnTitle,
+}: DNDListProps) => {
   return (
     <div
       className="column-container"
       onDragOver={handleDragOver}
-      onDrop={(e) => handleOnDrop(e, column)}
+      onDrop={(e) => handleOnDrop(e, columnValue)}
     >
-      <h4>To-Do</h4>
+      <h4>{columnTitle}</h4>
       {tasks
-        .filter((task: tasksProp) => task.column === column)
+        .filter((task: tasksProp) => task.column === columnValue)
         .map((task: tasksProp) => (
           <div
             draggable
