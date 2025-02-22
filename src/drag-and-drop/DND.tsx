@@ -8,7 +8,7 @@ export interface tasksProp {
   column: string;
 }
 
-const DragAndDrop = () => {
+const DND = () => {
   const [tasks, setTasks] = useState<tasksProp[]>([
     { id: 1, title: "Reading", column: "todo" },
     { id: 2, title: "Writing", column: "todo" },
@@ -84,4 +84,4 @@ const DragAndDrop = () => {
   );
 };
 
-export default DragAndDrop;
+export default DND;

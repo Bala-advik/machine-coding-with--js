@@ -1,4 +1,4 @@
-import { tasksProp } from "./dnd";
+import { tasksProp } from "./DND";
 
 type DNDListProps = {
   handleDragOver: React.DragEventHandler;

@@ -8,6 +8,7 @@ function App() {
       <Link to="/tab-form">Tab Form</Link>
       <Link to="/pagination">Pagination</Link>
       <Link to="/dnd">Drag and Drop</Link>
+      <Link to="/pokemon">Pokemon</Link>
     </div>
   );
 }
