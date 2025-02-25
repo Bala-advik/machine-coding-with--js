@@ -6,6 +6,8 @@ import Tab from "./tab-form/Tab.tsx";
 import Pagination from "./pagination/Pagination.tsx";
 import DND from "./drag-and-drop/DND.tsx";
 import PokemonCard from "./pokemon-card-game/PokemonCard.tsx";
+import Wordle from "./wordle-game/Wordle.tsx";
+import AutoCompleteSearch from "./auto-complete-search/AutoCompleteSearch.tsx";
 
 const PAGE_SIZE: number = 10;
 
@@ -17,6 +19,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/pagination" element={<Pagination pageSize={PAGE_SIZE} />} />
       <Route path="/dnd" element={<DND />} />
       <Route path="/pokemon" element={<PokemonCard />} />
+      <Route path="/wordle" element={<Wordle />} />
+      <Route path="/autocompletesearch" element={<AutoCompleteSearch />} />
     </Routes>
   </BrowserRouter>
 );

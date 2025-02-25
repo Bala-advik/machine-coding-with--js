@@ -9,6 +9,8 @@ function App() {
       <Link to="/pagination">Pagination</Link>
       <Link to="/dnd">Drag and Drop</Link>
       <Link to="/pokemon">Pokemon</Link>
+      <Link to="/wordle">Wordle</Link>
+      <Link to="/autocompletesearch">Auto Complete Search</Link>
     </div>
   );
 }
