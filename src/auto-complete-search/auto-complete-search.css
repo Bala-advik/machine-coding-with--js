@@ -31,11 +31,15 @@
 }
 
 .search-selected-result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 5px;
   width: 500px;
   border: 1px solid black;
   padding: 10px;
-  max-height: 600px;
+  max-height: 800px;
+  overflow: auto;
 }
 
 .search-selected-result-card > img {
@@ -44,8 +48,14 @@
 }
 
 .selected-result-card-tag {
-  border: 1px solid black;
+  margin-right: 10px;
   border-radius: 10px;
-  margin: 5px;
-  padding: 3px;
+}
+
+.selected-result-card-instruction-container {
+  margin: 1rem;
+}
+
+summary {
+  cursor: pointer;
 }

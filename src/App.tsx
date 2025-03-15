@@ -2,15 +2,31 @@ import { Link } from "react-router";
 import "./App.css";
 
 function App() {
+  const pages = [
+    { name: "Tab Form", url: "/tab-form" },
+    { name: "Pagination", url: "/pagination" },
+    { name: "Drag and Drop", url: "/dnd" },
+    { name: "Pokemon", url: "/pokemon" },
+    { name: "Wordle", url: "/wordle" },
+    { name: "Auto Complete Search", url: "/autocompletesearch" },
+  ];
   return (
-    <div className="container">
-      Hello, Which one do you want to navigate to ?
-      <Link to="/tab-form">Tab Form</Link>
-      <Link to="/pagination">Pagination</Link>
-      <Link to="/dnd">Drag and Drop</Link>
-      <Link to="/pokemon">Pokemon</Link>
-      <Link to="/wordle">Wordle</Link>
-      <Link to="/autocompletesearch">Auto Complete Search</Link>
+    <div className="app-container">
+      <div>
+        <p>Hello, Which one do you want to navigate to ?</p>
+      </div>
+
+      <div className="page-container">
+        {pages.map((page) => {
+          return (
+            <div className="page-card">
+              <Link className="page-card-link" to={page.url}>
+                {page.name}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

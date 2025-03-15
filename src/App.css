@@ -1,10 +1,28 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.container {
+.app-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.page-container {
+  display: flex;
+}
+
+.page-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 180px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.page-card-link {
+  text-decoration: none;
 }

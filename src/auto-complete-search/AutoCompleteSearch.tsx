@@ -56,17 +56,27 @@ const AutoCompleteSearch = () => {
           <p>
             {selectedResult.name} - {selectedResult.prepTimeMinutes} Minutes
           </p>
-          {selectedResult.instructions.length > 0 &&
-            selectedResult.instructions.map((instruction: any, index: any) => (
-              <p key={index}>•{instruction}</p>
-            ))}
-          {selectedResult.tags.length > 0 &&
-            selectedResult.tags.map((tag: any, index: any) => (
-              <span key={index} className="selected-result-card-tag">
-                #{tag}
-              </span>
-            ))}
-          <p></p>
+          <div className="selected-result-card-instruction-container">
+            <details>
+              <summary>Preparation Instructions</summary>
+              <ul>
+                {selectedResult.instructions.length > 0 &&
+                  selectedResult.instructions.map(
+                    (instruction: any, index: any) => (
+                      <li key={index}>{instruction}</li>
+                    )
+                  )}
+              </ul>
+            </details>
+          </div>
+          <div className="selected-result-card-tag-container">
+            {selectedResult.tags.length > 0 &&
+              selectedResult.tags.map((tag: any, index: any) => (
+                <span key={index} className="selected-result-card-tag">
+                  #{tag}
+                </span>
+              ))}
+          </div>
         </div>
       )}
     </div>
