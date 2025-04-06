@@ -6,8 +6,7 @@ function App() {
     { name: "Tab Form", url: "/tab-form" },
     { name: "Pagination", url: "/pagination" },
     { name: "Drag and Drop", url: "/dnd" },
-    { name: "Pokemon", url: "/pokemon" },
-    { name: "Wordle", url: "/wordle" },
+    { name: "Tic Tac Toe", url: "/tic-tac-toe" },
     { name: "Auto Complete Search", url: "/autocompletesearch" },
   ];
   return (
