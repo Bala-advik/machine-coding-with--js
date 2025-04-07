@@ -7,6 +7,8 @@ function App() {
     { name: "Pagination", url: "/pagination" },
     { name: "Drag and Drop", url: "/dnd" },
     { name: "Tic Tac Toe", url: "/tic-tac-toe" },
+    { name: "Nested Checkboxes", url: "/nested-checkboxes" },
+    { name: "OTP", url: "/otp" },
     { name: "Auto Complete Search", url: "/autocompletesearch" },
   ];
   return (
