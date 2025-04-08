@@ -59,33 +59,32 @@ const CheckBoxComp = ({
 }) => {
   {
     const handleChange = (isChecked: any, node: checkBoxType) => {
-      setCheckedData((prev: any) => {
-        const newState = { ...prev };
+      const newState = { ...checkedData };
+
+      const updateChildren = (node: checkBoxType, isChecked: Boolean) => {
         newState[node.id] = isChecked;
+        node.children?.forEach((childNode: any) => {
+          updateChildren(childNode, isChecked);
+        });
+      };
+      updateChildren(node, isChecked);
 
-        // Handling Top to Bottom Click Actions
-        const handleParentClick = (node: checkBoxType) => {
-          newState[node.id] = isChecked;
-          node.children?.forEach((childNode: any) => {
-            handleParentClick(childNode);
-          });
-        };
-        handleParentClick(node);
-
-        // Handling Bottom to Top Click Actions
-        const validateChildFilled = (node: checkBoxType) => {
-          if (!node.children) {
-            return newState[node.id] || false;
+      const updateAncestorStates = (checkBoxItems: checkBoxType[]) => {
+        checkBoxItems.forEach((nodes: checkBoxType) => {
+          if (nodes.children) {
+            updateAncestorStates(nodes.children);
           }
-          const allChildrenChecked = node.children.every(
-            (elem): Boolean => validateChildFilled(elem)
-          );
-          newState[node.id] = allChildrenChecked;
-          return allChildrenChecked;
-        };
-        checkBoxes.forEach((node: checkBoxType) => validateChildFilled(node));
-        return newState;
-      });
+          if (nodes.children && nodes.children.length > 0) {
+            const allChildrenChecked = nodes.children.every(
+              (child) => newState[child.id]
+            );
+            newState[nodes.id] = allChildrenChecked;
+          }
+        });
+      };
+
+      updateAncestorStates(defaultcheckBoxes);
+      setCheckedData(newState);
     };
     return checkBoxes.map((node: checkBoxType) => (
       <div key={node.id} className="parent-node">
