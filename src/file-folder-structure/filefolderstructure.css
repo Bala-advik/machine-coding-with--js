@@ -1,0 +1,11 @@
+.file-folder-page {
+  padding-left: 100px;
+}
+
+.file-folder-container {
+  padding-left: 20px;
+}
+
+.file-folder-expand-item {
+  cursor: pointer;
+}

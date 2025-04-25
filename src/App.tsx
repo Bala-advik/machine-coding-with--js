@@ -8,6 +8,7 @@ function App() {
     { name: "Drag and Drop", url: "/dnd" },
     { name: "Tic Tac Toe", url: "/tic-tac-toe" },
     { name: "Nested Checkboxes", url: "/nested-checkboxes" },
+    { name: "File Folder Structure", url: "/file-folder-structure" },
     { name: "OTP", url: "/otp" },
     { name: "Auto Complete Search", url: "/autocompletesearch" },
   ];

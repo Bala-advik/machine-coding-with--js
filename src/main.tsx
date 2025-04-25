@@ -9,6 +9,7 @@ import AutoCompleteSearch from "./auto-complete-search/AutoCompleteSearch.tsx";
 import TicTacToe from "./tic-tac-toe/TicTacToe.tsx";
 import OTP from "./input-otp/OTP.tsx";
 import NestedCheckbox from "./nested-checkboxes/NestedCheckbox.tsx";
+import FileFolderStructure from "./file-folder-structure/FileFolderStructure.tsx";
 
 const PAGE_SIZE: number = 10;
 
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/pagination" element={<Pagination pageSize={PAGE_SIZE} />} />
       <Route path="/dnd" element={<DND />} />
       <Route path="/nested-checkboxes" element={<NestedCheckbox />} />
+      <Route path="/file-folder-structure" element={<FileFolderStructure />} />
       <Route path="/tic-tac-toe" element={<TicTacToe />} />
       <Route path="/otp" element={<OTP />} />
       <Route path="/autocompletesearch" element={<AutoCompleteSearch />} />
